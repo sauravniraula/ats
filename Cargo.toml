@@ -1,0 +1,3 @@
+[workspace]
+members = ["ats-llm", "ats-mcp"]
+resolver = "2"

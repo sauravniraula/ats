@@ -1,0 +1,10 @@
+[package]
+name = "ats-mcp"
+version = "0.1.0"
+edition = "2024"
+description = "Stdio MCP server for ATS discovery tools"
+license = "MIT"
+
+[dependencies]
+ats-llm = { path = "../ats-llm" }
+serde_json = "1"
