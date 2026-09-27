@@ -1,4 +1,5 @@
-//! Reusable web search and free OpenRouter LLM discovery APIs.
+//! Reusable web search and aggregated multi-provider LLM discovery APIs.
+#![allow(dead_code)]
 //!
 //! [`web_search`] accepts a JSON object with `query` and optional `limit` (1–20).
 //! [`list_free_llms`] accepts the documented catalog filters, sorting and pagination
@@ -14,6 +15,8 @@ use scraper::{Html, Selector};
 use serde::Deserialize;
 use serde_json::{Value, json};
 use url::Url;
+
+mod aggregate;
 
 const MODEL_URL: &str = "https://openrouter.ai/api/v1/models";
 const DDG_URL: &str = "https://html.duckduckgo.com/html/";
@@ -407,13 +410,7 @@ pub fn web_search(args: &Value) -> Result<Value, String> {
 }
 
 pub fn list_free_llms(args: &Value) -> Result<Value, String> {
-    let client = Client::builder()
-        .connect_timeout(Duration::from_secs(5))
-        .timeout(Duration::from_secs(15))
-        .user_agent("ats-mcp/0.1 (MCP discovery)")
-        .build()
-        .map_err(|e| format!("HTTP client setup failed: {e}"))?;
-    model_catalog(&client, &ToolConfig::from_env(), args)
+    aggregate::list_free_llms(args)
 }
 
 #[cfg(test)]

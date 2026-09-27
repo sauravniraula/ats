@@ -1,0 +1,212 @@
+{
+  "bad_sort": "invalid sort",
+  "bad_classification": "invalid access_classification",
+  "bad_provider_unknown": "provider must be openrouter, groq, cloudflare, gemini, or nous",
+  "bad_provider_non_string": "provider must be a string",
+  "bad_tools_only_string": "tools_only must be a boolean",
+  "bad_offset_negative": "{\"benchmark_contract\":\"Cross-provider benchmark values are unknown; null means not supplied by a comparable source. Throughput values are not inferred.\",\"fetched_at_unix\":1790457021,\"free_definition\":\"Only access_classification=model_price_zero means catalog prices explicitly prove zero. free_tier_eligible_unverified means provider offers quota-limited free access but per-model eligibility is not proven. unknown is not asserted free.\",\"has_more\":false,\"limit\":20,\"models\":[{\"access_classification\":\"model_price_zero\",\"agentic_index\":45.8,\"coding_index\":68.1,\"context_length\":262144,\"created_unix\":1786722910,\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"free_evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"id\":\"openrouter/qwen/qwen3.8-27b:free\",\"intelligence_index\":33.7,\"model_url\":\"https://openrouter.ai/models/qwen/qwen3.8-27b:free\",\"name\":\"Qwen: Qwen3.8 27B (free)\",\"pricing_usd_per_token\":{\"completion\":\"0\",\"evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"overrides\":null,\"prompt\":\"0\",\"request\":null},\"provider\":\"openrouter\",\"provider_model_id\":\"qwen/qwen3.8-27b:free\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"supports_tools\":true,\"throughput_order\":null,\"throughput_tokens_per_second\":null},{\"access_classification\":\"model_price_zero\",\"agentic_index\":22.5,\"coding_index\":52.1,\"context_length\":1048576,\"created_unix\":1784325956,\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"free_evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"id\":\"openrouter/thinkingmachines/inkling:free\",\"intelligence_index\":25,\"model_url\":\"https://openrouter.ai/models/thinkingmachines/inkling:free\",\"name\":\"Thinking Machines: Inkling (free)\",\"pricing_usd_per_token\":{\"completion\":\"0\",\"evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"overrides\":null,\"prompt\":\"0\",\"request\":null},\"provider\":\"openrouter\",\"provider_model_id\":\"thinkingmachines/inkling:free\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"supports_tools\":true,\"throughput_order\":null,\"throughput_tokens_per_second\":null},{\"access_classification\":\"model_price_zero\",\"agentic_index\":20.1,\"coding_index\":49.3,\"context_length\":1000000,\"created_unix\":1780551208,\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"free_evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"id\":\"openrouter/nvidia/nemotron-3-ultra-550b-a55b:free\",\"intelligence_index\":22.9,\"model_url\":\"https://openrouter.ai/models/nvidia/nemotron-3-ultra-550b-a55b:free\",\"name\":\"NVIDIA: Nemotron 3 Ultra (free)\",\"pricing_usd_per_token\":{\"completion\":\"0\",\"evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"overrides\":null,\"prompt\":\"0\",\"request\":null},\"provider\":\"openrouter\",\"provider_model_id\":\"nvidia/nemotron-3-ultra-550b-a55b:free\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"supports_tools\":true,\"throughput_order\":null,\"throughput_tokens_per_second\":null},{\"access_classification\":\"model_price_zero\",\"agentic_index\":27.9,\"coding_index\":55.6,\"context_length\":262144,\"created_unix\":1787846290,\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"free_evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"id\":\"openrouter/inclusionai/ling-3.0-flash-fin:free\",\"intelligence_index\":22.6,\"model_url\":\"https://openrouter.ai/models/inclusionai/ling-3.0-flash-fin:free\",\"name\":\"inclusionAI: Ling 3.0 Flash Fin (free)\",\"pricing_usd_per_token\":{\"completion\":\"0\",\"evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"overrides\":null,\"prompt\":\"0\",\"request\":null},\"provider\":\"openrouter\",\"provider_model_id\":\"inclusionai/ling-3.0-flash-fin:free\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"supports_tools\":true,\"throughput_order\":null,\"throughput_tokens_per_second\":null},{\"access_classification\":\"model_price_zero\",\"agentic_index\":3.5,\"coding_index\":26.8,\"context_length\":1000000,\"created_unix\":1786452751,\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"free_evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"id\":\"openrouter/nvidia/nemotron-3.5-lightning:free\",\"intelligence_index\":12.9,\"model_url\":\"https://openrouter.ai/models/nvidia/nemotron-3.5-lightning:free\",\"name\":\"NVIDIA: Nemotron 3.5 Lightning (free)\",\"pricing_usd_per_token\":{\"completion\":\"0\",\"evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"overrides\":null,\"prompt\":\"0\",\"request\":null},\"provider\":\"openrouter\",\"provider_model_id\":\"nvidia/nemotron-3.5-lightning:free\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"supports_tools\":true,\"throughput_order\":null,\"throughput_tokens_per_second\":null},{\"access_classification\":\"model_price_zero\",\"agentic_index\":1.7,\"coding_index\":37.7,\"context_length\":262144,\"created_unix\":1773245239,\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"free_evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"id\":\"openrouter/nvidia/nemotron-3-super-120b-a12b:free\",\"intelligence_index\":12.8,\"model_url\":\"https://openrouter.ai/models/nvidia/nemotron-3-super-120b-a12b:free\",\"name\":\"NVIDIA: Nemotron 3 Super (free)\",\"pricing_usd_per_token\":{\"completion\":\"0\",\"evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"overrides\":null,\"prompt\":\"0\",\"request\":null},\"provider\":\"openrouter\",\"provider_model_id\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"supports_tools\":true,\"throughput_order\":null,\"throughput_tokens_per_second\":null},{\"access_classification\":\"model_price_zero\",\"agentic_index\":1.1,\"coding_index\":36.5,\"context_length\":256000,\"created_unix\":1781723748,\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"free_evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"id\":\"openrouter/cohere/north-mini-code:free\",\"intelligence_index\":9.9,\"model_url\":\"https://openrouter.ai/models/cohere/north-mini-code:free\",\"name\":\"Cohere: North Mini Code (free)\",\"pricing_usd_per_token\":{\"completion\":\"0\",\"evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"overrides\":null,\"prompt\":\"0\",\"request\":null},\"provider\":\"openrouter\",\"provider_model_id\":\"cohere/north-mini-code:free\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"supports_tools\":true,\"throughput_order\":null,\"throughput_tokens_per_second\":null},{\"access_classification\":\"model_price_zero\",\"agentic_index\":null,\"coding_index\":null,\"context_length\":512000,\"created_unix\":1786680361,\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"free_evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"id\":\"openrouter/dots-studio/dots-3-note-preview:free\",\"intelligence_index\":null,\"model_url\":\"https://openrouter.ai/models/dots-studio/dots-3-note-preview:free\",\"name\":\"Dots Studio: Dots3-Note Preview (free)\",\"pricing_usd_per_token\":{\"completion\":\"0\",\"evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"overrides\":null,\"prompt\":\"0\",\"request\":null},\"provider\":\"openrouter\",\"provider_model_id\":\"dots-studio/dots-3-note-preview:free\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"supports_tools\":true,\"throughput_order\":null,\"throughput_tokens_per_second\":null},{\"access_classification\":\"model_price_zero\",\"agentic_index\":null,\"coding_index\":39.3,\"context_length\":262144,\"created_unix\":1775227989,\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"free_evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"id\":\"openrouter/google/gemma-4-26b-a4b-it:free\",\"intelligence_index\":null,\"model_url\":\"https://openrouter.ai/models/google/gemma-4-26b-a4b-it:free\",\"name\":\"Google: Gemma 4 26B A4B  (free)\",\"pricing_usd_per_token\":{\"completion\":\"0\",\"evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"overrides\":null,\"prompt\":\"0\",\"request\":null},\"provider\":\"openrouter\",\"provider_model_id\":\"google/gemma-4-26b-a4b-it:free\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"supports_tools\":true,\"throughput_order\":null,\"throughput_tokens_per_second\":null},{\"access_classification\":\"model_price_zero\",\"agentic_index\":4.2,\"coding_index\":43.4,\"context_length\":262144,\"created_unix\":1775148486,\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"free_evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"id\":\"openrouter/google/gemma-4-31b-it:free\",\"intelligence_index\":null,\"model_url\":\"https://openrouter.ai/models/google/gemma-4-31b-it:free\",\"name\":\"Google: Gemma 4 31B (free)\",\"pricing_usd_per_token\":{\"completion\":\"0\",\"evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"overrides\":null,\"prompt\":\"0\",\"request\":null},\"provider\":\"openrouter\",\"provider_model_id\":\"google/gemma-4-31b-it:free\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"supports_tools\":true,\"throughput_order\":null,\"throughput_tokens_per_second\":null},{\"access_classification\":\"model_price_zero\",\"agentic_index\":null,\"coding_index\":null,\"context_length\":262144,\"created_unix\":1788545946,\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"free_evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"id\":\"openrouter/inclusionai/ling-3.0-flash-sante:free\",\"intelligence_index\":null,\"model_url\":\"https://openrouter.ai/models/inclusionai/ling-3.0-flash-sante:free\",\"name\":\"inclusionAI: Ling 3.0 Flash Sante (free)\",\"pricing_usd_per_token\":{\"completion\":\"0\",\"evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"overrides\":null,\"prompt\":\"0\",\"request\":null},\"provider\":\"openrouter\",\"provider_model_id\":\"inclusionai/ling-3.0-flash-sante:free\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"supports_tools\":true,\"throughput_order\":null,\"throughput_tokens_per_second\":null},{\"access_classification\":\"model_price_zero\",\"agentic_index\":null,\"coding_index\":null,\"context_length\":65536,\"created_unix\":1786470519,\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"free_evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"id\":\"openrouter/liquid/lfm-2.5-2.6b:free\",\"intelligence_index\":null,\"model_url\":\"https://openrouter.ai/models/liquid/lfm-2.5-2.6b:free\",\"name\":\"LiquidAI: LFM2.5-2.6B (free)\",\"pricing_usd_per_token\":{\"completion\":\"0\",\"evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"overrides\":null,\"prompt\":\"0\",\"request\":null},\"provider\":\"openrouter\",\"provider_model_id\":\"liquid/lfm-2.5-2.6b:free\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"supports_tools\":true,\"throughput_order\":null,\"throughput_tokens_per_second\":null},{\"access_classification\":\"model_price_zero\",\"agentic_index\":null,\"coding_index\":13.8,\"context_length\":256000,\"created_unix\":1777393095,\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"free_evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"id\":\"openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free\",\"intelligence_index\":null,\"model_url\":\"https://openrouter.ai/models/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free\",\"name\":\"NVIDIA: Nemotron 3 Nano Omni (free)\",\"pricing_usd_per_token\":{\"completion\":\"0\",\"evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"overrides\":null,\"prompt\":\"0\",\"request\":null},\"provider\":\"openrouter\",\"provider_model_id\":\"nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"supports_tools\":true,\"throughput_order\":null,\"throughput_tokens_per_second\":null},{\"access_classification\":\"model_price_zero\",\"agentic_index\":null,\"coding_index\":null,\"context_length\":128000,\"created_unix\":1780581864,\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"free_evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"id\":\"openrouter/nvidia/nemotron-3.5-content-safety:free\",\"intelligence_index\":null,\"model_url\":\"https://openrouter.ai/models/nvidia/nemotron-3.5-content-safety:free\",\"name\":\"NVIDIA: Nemotron 3.5 Content Safety (free)\",\"pricing_usd_per_token\":{\"completion\":\"0\",\"evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"overrides\":null,\"prompt\":\"0\",\"request\":null},\"provider\":\"openrouter\",\"provider_model_id\":\"nvidia/nemotron-3.5-content-safety:free\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"supports_tools\":false,\"throughput_order\":null,\"throughput_tokens_per_second\":null},{\"access_classification\":\"model_price_zero\",\"agentic_index\":null,\"coding_index\":null,\"context_length\":262144,\"created_unix\":1784652683,\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"free_evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"id\":\"openrouter/poolside/laguna-s-2.1:free\",\"intelligence_index\":null,\"model_url\":\"https://openrouter.ai/models/poolside/laguna-s-2.1:free\",\"name\":\"Poolside: Laguna S 2.1 (free)\",\"pricing_usd_per_token\":{\"completion\":\"0\",\"evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"overrides\":null,\"prompt\":\"0\",\"request\":null},\"provider\":\"openrouter\",\"provider_model_id\":\"poolside/laguna-s-2.1:free\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"supports_tools\":true,\"throughput_order\":null,\"throughput_tokens_per_second\":null},{\"access_classification\":\"model_price_zero\",\"agentic_index\":null,\"coding_index\":null,\"context_length\":262144,\"created_unix\":1783002429,\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"free_evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"id\":\"openrouter/poolside/laguna-xs-2.1:free\",\"intelligence_index\":null,\"model_url\":\"https://openrouter.ai/models/poolside/laguna-xs-2.1:free\",\"name\":\"Poolside: Laguna XS 2.1 (free)\",\"pricing_usd_per_token\":{\"completion\":\"0\",\"evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"overrides\":null,\"prompt\":\"0\",\"request\":null},\"provider\":\"openrouter\",\"provider_model_id\":\"poolside/laguna-xs-2.1:free\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"supports_tools\":true,\"throughput_order\":null,\"throughput_tokens_per_second\":null},{\"access_classification\":\"model_price_zero\",\"agentic_index\":null,\"coding_index\":52.9,\"context_length\":1048576,\"created_unix\":1785443117,\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"free_evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"id\":\"openrouter/thinkingmachines/inkling-small:free\",\"intelligence_index\":null,\"model_url\":\"https://openrouter.ai/models/thinkingmachines/inkling-small:free\",\"name\":\"Thinking Machines: Inkling Small (free)\",\"pricing_usd_per_token\":{\"completion\":\"0\",\"evidence\":\"OpenRouter :free variant and zero prompt/completion/request/override prices\",\"overrides\":null,\"prompt\":\"0\",\"request\":null},\"provider\":\"openrouter\",\"provider_model_id\":\"thinkingmachines/inkling-small:free\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"supports_tools\":true,\"throughput_order\":null,\"throughput_tokens_per_second\":null}],\"offset\":0,\"partial_results\":true,\"providers\":[{\"documentation_url\":\"https://openrouter.ai/docs/overview/models\",\"fetched_at_unix\":1790457021,\"model_count\":17,\"provider\":\"openrouter\",\"source_url\":\"https://openrouter.ai/api/v1/models\",\"status\":\"ok\"},{\"diagnostic\":\"not_configured: set GROQ_API_KEY\",\"documentation_url\":\"https://console.groq.com/docs/models\",\"fetched_at_unix\":1790457021,\"provider\":\"groq\",\"source_url\":\"https://api.groq.com/openai/v1/models\",\"status\":\"not_configured\"},{\"diagnostic\":\"not_configured: set CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN\",\"documentation_url\":\"https://developers.cloudflare.com/api/resources/ai/subresources/models/methods/list/\",\"fetched_at_unix\":1790457021,\"provider\":\"cloudflare\",\"source_url\":\"https://api.cloudflare.com/client/v4/accounts/%7Baccount_id%7D/ai/models/search\",\"status\":\"not_configured\"},{\"diagnostic\":\"not_configured: set GEMINI_API_KEY\",\"documentation_url\":\"https://ai.google.dev/api/models\",\"fetched_at_unix\":1790457021,\"provider\":\"gemini\",\"source_url\":\"https://generativelanguage.googleapis.com/v1beta/models\",\"status\":\"not_configured\"},{\"diagnostic\":\"not_configured: set NOUS_API_KEY\",\"documentation_url\":\"https://portal.nousresearch.com/api-docs\",\"fetched_at_unix\":1790457021,\"provider\":\"nous\",\"source_url\":\"https://inference-api.nousresearch.com/v1/models\",\"status\":\"not_configured\"}],\"sort\":\"intelligence\",\"total\":17}",
+  "bad_limit_zero": "offset must be <=100000 and limit must be 1..100",
+  "bad_limit_overrun": "offset must be <=100000 and limit must be 1..100",
+  "bad_query_overrun": "query must be at most 120 bytes",
+  "unknown_argument": "Unknown argument: bogus",
+  "aggregate_total": 17,
+  "aggregate_partial_results": true,
+  "aggregate_has_more": false,
+  "aggregate_page_size": 17,
+  "aggregate_providers": [
+    "openrouter",
+    "groq",
+    "cloudflare",
+    "gemini",
+    "nous"
+  ],
+  "aggregate_provider_statuses": [
+    [
+      "openrouter",
+      "ok",
+      null
+    ],
+    [
+      "groq",
+      "not_configured",
+      "not_configured: set GROQ_API_KEY"
+    ],
+    [
+      "cloudflare",
+      "not_configured",
+      "not_configured: set CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN"
+    ],
+    [
+      "gemini",
+      "not_configured",
+      "not_configured: set GEMINI_API_KEY"
+    ],
+    [
+      "nous",
+      "not_configured",
+      "not_configured: set NOUS_API_KEY"
+    ]
+  ],
+  "free_definition": "Only access_classification=model_price_zero means catalog prices explicitly prove zero. free_tier_eligible_unverified means provider offers quota-limited free access but per-model eligibility is not proven. unknown is not asserted free.",
+  "benchmark_contract": "Cross-provider benchmark values are unknown; null means not supplied by a comparable source. Throughput values are not inferred.",
+  "first_model_keys": [
+    "access_classification",
+    "agentic_index",
+    "coding_index",
+    "context_length",
+    "created_unix",
+    "documentation_url",
+    "fetched_at_unix",
+    "free_evidence",
+    "id",
+    "intelligence_index",
+    "model_url",
+    "name",
+    "pricing_usd_per_token",
+    "provider",
+    "provider_model_id",
+    "source_url",
+    "supports_tools",
+    "throughput_order",
+    "throughput_tokens_per_second"
+  ],
+  "first_model_sample": {
+    "id": "openrouter/qwen/qwen3.8-27b:free",
+    "provider": "openrouter",
+    "provider_model_id": "qwen/qwen3.8-27b:free",
+    "name": "Qwen: Qwen3.8 27B (free)",
+    "access_classification": "model_price_zero",
+    "supports_tools": true,
+    "throughput_order": null,
+    "model_url": "https://openrouter.ai/models/qwen/qwen3.8-27b:free",
+    "source_url": "https://openrouter.ai/api/v1/models",
+    "documentation_url": "https://openrouter.ai/docs/overview/models"
+  },
+  "thinking_machines": [
+    {
+      "id": "openrouter/thinkingmachines/inkling:free",
+      "provider_model_id": "thinkingmachines/inkling:free",
+      "model_url": "https://openrouter.ai/models/thinkingmachines/inkling:free",
+      "source_url": "https://openrouter.ai/api/v1/models"
+    },
+    {
+      "id": "openrouter/thinkingmachines/inkling-small:free",
+      "provider_model_id": "thinkingmachines/inkling-small:free",
+      "model_url": "https://openrouter.ai/models/thinkingmachines/inkling-small:free",
+      "source_url": "https://openrouter.ai/api/v1/models"
+    }
+  ],
+  "page2_ids": [
+    "openrouter/inclusionai/ling-3.0-flash-fin:free",
+    "openrouter/nvidia/nemotron-3.5-lightning:free"
+  ],
+  "page2_has_more": true,
+  "tools_list_count": 2,
+  "tools_list_names": [
+    "web_search",
+    "list_free_llms"
+  ],
+  "lf_input_schema_properties": [
+    "access_classification",
+    "limit",
+    "min_context",
+    "offset",
+    "provider",
+    "query",
+    "sort",
+    "tools_only"
+  ],
+  "lf_provider_enum": [
+    "openrouter",
+    "groq",
+    "cloudflare",
+    "gemini",
+    "nous"
+  ],
+  "lf_classification_enum": [
+    "model_price_zero",
+    "free_tier_eligible_unverified",
+    "unknown"
+  ],
+  "lf_sort_enum": [
+    "intelligence",
+    "coding",
+    "agentic",
+    "throughput",
+    "context",
+    "newest",
+    "name"
+  ],
+  "provider_groq": {
+    "status": "not_configured",
+    "diagnostic": "not_configured: set GROQ_API_KEY",
+    "model_count": null,
+    "models_returned": 0
+  },
+  "provider_cloudflare": {
+    "status": "not_configured",
+    "diagnostic": "not_configured: set CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN",
+    "model_count": null,
+    "models_returned": 0
+  },
+  "provider_gemini": {
+    "status": "not_configured",
+    "diagnostic": "not_configured: set GEMINI_API_KEY",
+    "model_count": null,
+    "models_returned": 0
+  },
+  "provider_nous": {
+    "status": "not_configured",
+    "diagnostic": "not_configured: set NOUS_API_KEY",
+    "model_count": null,
+    "models_returned": 0
+  },
+  "provider_nous_models": 0,
+  "provider_nous_partial_results": false,
+  "tools_only_true_total": 16,
+  "min_context_1m_total": 4,
+  "query_nemotron_total": 5,
+  "provider_openrouter_total": 17,
+  "classification_model_price_zero_total": 17,
+  "classification_free_tier_total": 0,
+  "classification_unknown_total": 0,
+  "openrouter_plus_model_price_zero_total": 17,
+  "openrouter_plus_unknown_total": 0,
+  "order_samples": {
+    "intelligence": [
+      "openrouter/qwen/qwen3.8-27b:free",
+      "openrouter/thinkingmachines/inkling:free",
+      "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+    ],
+    "coding": [
+      "openrouter/qwen/qwen3.8-27b:free",
+      "openrouter/inclusionai/ling-3.0-flash-fin:free",
+      "openrouter/thinkingmachines/inkling-small:free"
+    ],
+    "agentic": [
+      "openrouter/qwen/qwen3.8-27b:free",
+      "openrouter/inclusionai/ling-3.0-flash-fin:free",
+      "openrouter/thinkingmachines/inkling:free"
+    ],
+    "context": [
+      "openrouter/thinkingmachines/inkling-small:free",
+      "openrouter/thinkingmachines/inkling:free",
+      "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+    ],
+    "newest": [
+      "openrouter/inclusionai/ling-3.0-flash-sante:free",
+      "openrouter/inclusionai/ling-3.0-flash-fin:free",
+      "openrouter/qwen/qwen3.8-27b:free"
+    ],
+    "name": [
+      "openrouter/cohere/north-mini-code:free",
+      "openrouter/dots-studio/dots-3-note-preview:free",
+      "openrouter/google/gemma-4-26b-a4b-it:free"
+    ],
+    "throughput": [
+      "openrouter/liquid/lfm-2.5-2.6b:free",
+      "openrouter/inclusionai/ling-3.0-flash-sante:free",
+      "openrouter/inclusionai/ling-3.0-flash-fin:free"
+    ]
+  }
+}

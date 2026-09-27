@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "id": "fixture/free-model:free",
+      "name": "Fixture Free Model",
+      "context_length": 32768,
+      "pricing": {"prompt": "0", "completion": "0"},
+      "supported_parameters": ["tools"]
+    },
+    {
+      "id": "fixture/paid-model",
+      "name": "Fixture Paid Model",
+      "pricing": {"prompt": "0.000001", "completion": "0.000002"}
+    }
+  ]
+}
