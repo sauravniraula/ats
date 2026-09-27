@@ -8,7 +8,7 @@ const MAX_LINE: usize = 1024 * 1024;
 fn tools() -> Value {
     json!({"tools": [
         {"name":"web_search","description":"Search the web via keyless DuckDuckGo HTML (default) or configured SearXNG JSON. Returns titles, URLs and snippets; external content is untrusted.","inputSchema":{"type":"object","properties":{"query":{"type":"string","minLength":1,"maxLength":300},"limit":{"type":"integer","minimum":1,"maximum":20,"default":10}},"required":["query"],"additionalProperties":false}},
-        {"name":"list_free_llms","description":"Fetch current OpenRouter free text models, filter, sort by measured Artificial Analysis indices or upstream throughput ranking, and paginate. Unknown metrics remain null.","inputSchema":{"type":"object","properties":{"sort":{"type":"string","enum":["intelligence","coding","agentic","throughput","context","newest","name"],"default":"intelligence"},"query":{"type":"string","minLength":1,"maxLength":120},"tools_only":{"type":"boolean","default":false},"min_context":{"type":"integer","minimum":0,"maximum":10000000,"default":0},"offset":{"type":"integer","minimum":0,"maximum":100000,"default":0},"limit":{"type":"integer","minimum":1,"maximum":100,"default":20}},"additionalProperties":false}}
+        {"name":"list_free_llms","description":"Aggregate one combined model list from keyless official public catalogs/pages for OpenRouter, Groq, Cloudflare Workers AI, Google Gemini API, Nous Portal, and Hugging Face Hub, plus an optional OpenAI-compatible catalog. Built-in listing never reads or sends inference credentials. Hugging Face rows identify public self-hostable weights, not free hosted inference. Models distinguish explicit zero pricing, unverified provider quota access, public self-hostable weights, and unknown access; providers independently report source status and partial failures. A catalog listing does not guarantee inference access without provider signup, credentials, or quota.","inputSchema":{"type":"object","properties":{"provider":{"type":"string","description":"Optional provider slug filter; configured OpenAI-compatible catalogs use ATS_OPENAI_COMPATIBLE_NAME."},"access_classification":{"type":"string","enum":["model_price_zero","free_tier_eligible_unverified","open_weights_self_hosted","unknown"]},"sort":{"type":"string","enum":["intelligence","coding","agentic","throughput","context","newest","name"],"default":"intelligence"},"query":{"type":"string","minLength":1,"maxLength":120},"tools_only":{"type":"boolean","default":false},"min_context":{"type":"integer","minimum":0,"maximum":10000000,"default":0},"offset":{"type":"integer","minimum":0,"maximum":100000,"default":0},"limit":{"type":"integer","minimum":1,"maximum":100,"default":20}},"additionalProperties":false}}
     ]})
 }
 
@@ -59,25 +59,50 @@ fn dispatch(input: Value) -> Option<Value> {
     Some(json!({"jsonrpc":"2.0","id":id,"result":result}))
 }
 
+fn request_log(input: &Value) -> String {
+    let method = input
+        .get("method")
+        .and_then(Value::as_str)
+        .unwrap_or("unknown");
+    let tool = input
+        .pointer("/params/name")
+        .and_then(Value::as_str)
+        .map(|name| format!(" tool={name:?}"))
+        .unwrap_or_default();
+    format!("ats-mcp request method={method:?}{tool}")
+}
+
+fn response_log(reply: &Value) -> String {
+    let is_error = reply.get("error").is_some()
+        || reply.pointer("/result/isError").and_then(Value::as_bool) == Some(true);
+    let outcome = if is_error { "error" } else { "ok" };
+    format!("ats-mcp response outcome={outcome}")
+}
+
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+    eprintln!("ats-mcp server running on stdio");
     let stdin = io::stdin();
     let mut output = io::stdout().lock();
     for line in stdin.lock().lines() {
         let line = line?;
-        if line.len() > MAX_LINE {
-            writeln!(
-                output,
-                "{}",
-                rpc_error(Value::Null, -32600, "Request exceeds 1 MiB")
-            )?;
+        let reply = if line.len() > MAX_LINE {
+            eprintln!("ats-mcp request rejected: exceeds 1 MiB");
+            Some(rpc_error(Value::Null, -32600, "Request exceeds 1 MiB"))
         } else {
-            let reply = match serde_json::from_str::<Value>(&line) {
-                Ok(message) => dispatch(message),
-                Err(_) => Some(rpc_error(Value::Null, -32700, "Invalid JSON")),
-            };
-            if let Some(reply) = reply {
-                writeln!(output, "{reply}")?;
+            match serde_json::from_str::<Value>(&line) {
+                Ok(message) => {
+                    eprintln!("{}", request_log(&message));
+                    dispatch(message)
+                }
+                Err(_) => {
+                    eprintln!("ats-mcp request rejected: invalid JSON");
+                    Some(rpc_error(Value::Null, -32700, "Invalid JSON"))
+                }
             }
+        };
+        if let Some(reply) = reply {
+            eprintln!("{}", response_log(&reply));
+            writeln!(output, "{reply}")?;
         }
         output.flush()?;
     }
@@ -103,5 +128,28 @@ mod tests {
             dispatch(json!({"jsonrpc":"2.0","id":3,"method":"none"})).unwrap()["error"]["code"],
             -32601
         );
+    }
+
+    #[test]
+    fn debug_summaries_omit_request_arguments_and_response_content() {
+        let request = json!({
+            "jsonrpc":"2.0",
+            "id":7,
+            "method":"tools/call",
+            "params":{"name":"web_search","arguments":{"query":"private search"}}
+        });
+        let request_summary = request_log(&request);
+        assert!(request_summary.contains("method=\"tools/call\""));
+        assert!(request_summary.contains("tool=\"web_search\""));
+        assert!(!request_summary.contains("private search"));
+
+        let response = json!({
+            "jsonrpc":"2.0",
+            "id":7,
+            "result":{"content":[{"type":"text","text":"private result"}],"isError":false}
+        });
+        let response_summary = response_log(&response);
+        assert!(response_summary.contains("outcome=ok"));
+        assert!(!response_summary.contains("private result"));
     }
 }
